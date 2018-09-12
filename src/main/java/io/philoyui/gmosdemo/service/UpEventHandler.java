@@ -22,22 +22,13 @@ public class UpEventHandler {
         MessageClient messageClient = new MessageClient(appKey,secret,group);
 
         messageClient.handleMessage(new MessageHandler(){
-
             @Override
             public void onTextMessage(Message message) {
                 System.out.println( "--success--" + message.getContent());
             }
-
         });
 
         messageClient.connect("ws://localhost:8080/endpoints");
-
-        try {
-            Thread.sleep(1000000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
 
     }
 
